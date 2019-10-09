@@ -3,26 +3,57 @@
         "brand": "Porsche",
         "model": "911",
         "price": 135000,
-        "img": "2004_Porsche_911_Carrera_type_997.jpg"
+        "year": 2004,
+        "img": "https://files.porsche.com/filestore/image/multimedia/none/991-2nd-gt3-modelimage-sideshot/model/76abaf29-df24-11e6-8503-0019999cd470/porsche-model.png"
     },{
         "brand": "Nissan",
         "model": "GT-R",
         "price": 80000,
-        "img": "250px-Nissan_GT-R.jpg"
+        "year": 2004,
+        "img": "https://www.nissanusa.com/content/dam/Nissan/us/vehicles/gtr/vehicle%20Profile%20Assets/2020/grade-2020-gt-r-50th-anniversary-super-silver.png.ximg.l_12_m.smart.png"
     },{
         "brand": "BMW",
         "model": "M3",
         "price": 60500,
-        "img": "250px-BMW_M3_E92.jpg"
+        "year": 2004,
+        "img": "https://s3-us-west-2.amazonaws.com/carvoy.com/thumbnails/17/17c138ce4ff48c941e2fa03e9c492bfa.png"
     },{
         "brand": "Audi",
         "model": "S5",
         "price": 53000,
-        "img": "250px-Audi_S5.jpg"
+        "year": 2004,
+        "img": "https://mediaservice.audi.com/media/live/aoa/pc/f5354a0wptwpt/2019/14+2d2d/ahv1d0/awv6k8/bav1ll/bbo6fc/dei3fb/eph7x5/gra8t3/hsw8it/kark8c/lia8g1/radv86/sfs2k3/spu7y1/ssh4kc/swr8x0/szu0na/zie4zb.jpeg"
     },{
         "brand": "Audi",
         "model": "TT",
         "price": 40000,
-        "img": "250px-2007_Audi_TT_Coupe.jpg"
+        "year": 2004,
+        "img": "https://picolio.auto123.com/18photo/audi/2018-audi-tt-coupe-20-tfsi.png"
+    },{
+        "brand": "Bugatti",
+        "model": "VEYRON 16.4 GRAND SPORT",
+        "price": 400000,
+        "year": 2014,
+        "img": "https://picolio.auto123.com/15photo/bugatti/2015-bugatti-veyron-164-grand-sport.png"
+    },{
+        "brand": "Porsche",
+        "model": "Panamera",
+        "price": 89500,
+        "year": 2016,
+        "img": "https://picolio.auto123.com/16photo/porsche/2016-porsche-panamera_1.png"
+    },{
+        "brand": "Ford",
+        "model": "Mustang",
+        "price": 38000,
+        "year": 2019,
+        "description": "After a refresh for the 2018 model year, the Ford Mustang enters the 2019 model year with a new Bullitt model. Arriving around 50 years after the movie Bullitt that featured a now-classic car chase with a Mustang, the 2019 Mustang Bullitt has 475 horsepower from a V-8 engine.",
+        "img": "https://st.motortrend.com/uploads/sites/10/2018/07/2019-ford-mustang-ecoboost-coupe-angular-front.png?interpolation=lanczos-none&fit=around|660:660"
+    },{
+        "brand": "Mazda",
+        "model": "Mazda3",
+        "price": 30000,
+        "year": 2017,
+        "description": "The 2017 Mazda3 is updating the compact sedan and hatchback this year with new interior and exterior styling, new engine and transmission programming, enhanced active safety equipment, and improved ride and handling.",
+        "img": "https://st.motortrend.com/uploads/sites/10/2016/12/2017-mazda-mazda3-sport-sedan-angular-front.png?interpolation=lanczos-none&fit=around|660:660"
     }]
 }
