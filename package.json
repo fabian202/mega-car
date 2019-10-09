@@ -5,11 +5,14 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "hookrouter": "^1.2.3",
+    "lodash": "^4.17.15",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-number-format": "^4.3.0",
     "react-scripts": "3.2.0",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "styled-components": "^4.4.0",
+    "use-debounce": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

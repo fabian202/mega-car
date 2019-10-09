@@ -5,25 +5,45 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
+  Button,
+  CardFooter
 } from "reactstrap";
+import styled, { css } from "styled-components";
 import NumberFormat from "react-number-format";
-import carDefault from '../assets/img/car.png'
+import carDefault from "../assets/img/car.png";
+import { navigate } from "hookrouter";
 
-export default function CarItem({ brand, model, year, price, img }) {
-  // console.log(props)
+const cardStyle = css`
+  margin: 10px 0;
+  background-color: #333;
+  border-color: #333;
+  text-align: center;
+`;
+
+const CardStyled = ({ className, children }) => {
   return (
-    <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-      <CardImg
-        top
-        width="100%"
-        src={img}
-        onError={e => e.target.src = carDefault}
-      />
+    <Card inverse className={className}>
+      {children}
+    </Card>
+  );
+};
+
+const StyledCard = styled(CardStyled)`
+  ${cardStyle}
+`;
+
+export default function CarItem({car, onCompare}) {
+  const { id, brand, model, year, price, img } = car;
+  const handleRedirect = (e) => {
+    navigate(`/cars/${id}`)
+  }
+  // console.log(props)
+  const title = `${brand} - ${model}`;
+  return (
+    <StyledCard>
+      <CardImg top src={img} onError={e => (e.target.src = carDefault)} onClick={handleRedirect} />
       <CardBody>
-        <CardTitle>
-          {brand} {model}
-        </CardTitle>
+        <CardTitle>{title}</CardTitle>
         <CardSubtitle>{year}</CardSubtitle>
         <CardSubtitle>
           <NumberFormat
@@ -33,8 +53,16 @@ export default function CarItem({ brand, model, year, price, img }) {
             prefix={"$"}
           />
         </CardSubtitle>
-        <Button>Compare</Button>
       </CardBody>
-    </Card>
+      <CardFooter>
+        <Button color="secondary" size="sm" onClick={() => onCompare(car)}>
+          Compare
+        </Button>
+        {/* <A href={`/cars/${id}`}>Details</A> */}
+        <Button size="sm" color="link" onClick={handleRedirect}>
+          Details
+        </Button>
+      </CardFooter>
+    </StyledCard>
   );
 }

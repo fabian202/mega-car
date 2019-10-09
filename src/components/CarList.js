@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CarItem from "./CarItem";
 import { Container, Row, Col } from "reactstrap";
-import carsData from "../data/cars.json";
+import { useCarList } from "../hooks/useCarList";
+// import {useCarContext} from '../hooks/useCarContext'
+import {useCarCompare} from '../hooks/useCarCompare'
 
 export default function CarList() {
-  // console.log(carsData)
-  const [cars, setCars] = useState();
+  const { cars } = useCarList();
+  // const { dispatch } = useCarContext();
+  const { handleCompare } = useCarCompare()
 
-  useEffect(() => {
-    setCars(carsData.data);
-  }, []);
+  // const handleCompare = (car) => {
+  //   console.log('compare', car)
+  //   dispatch({
+  //     type: 'COMPARE_CAR',
+  //     car
+  //   })
+  // }
 
   return (
     <React.Fragment>
@@ -18,7 +25,7 @@ export default function CarList() {
           {cars &&
             cars.map((car, index) => (
               <Col sm="6" md="4" lg="3" key={index}>
-                <CarItem {...car} />
+                <CarItem car={car} onCompare={handleCompare}/>
               </Col>
             ))}
         </Row>
