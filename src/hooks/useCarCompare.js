@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useCarContext } from "./useCarContext";
 
 export const useCarCompare = () => {

@@ -3,7 +3,7 @@ import { Badge } from "reactstrap";
 import styled, { css } from 'styled-components'
 
 const badgeStyle = css`
-  display: -webkit-inline-box;
+  vertical-align: top;
 `;
 
 const BadgeStyled = ({ className, children }) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import CarDetail from '../components/CarDetail'
+import CarDetail from '../shared/CarDetail'
 
 export default function DetailPage({id}) {
     return (

@@ -13,7 +13,7 @@ export const useCarDetail = () => {
             })
         }
 
-    }, [id])
+    }, [id, dispatch])
 
     return {
         setId,

@@ -1,5 +1,5 @@
 import React from "react";
-import CarList from "../components/CarList";
+import CarList from "../shared/CarList";
 
 export default function HomePage() {
   return (

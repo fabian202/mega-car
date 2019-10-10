@@ -14,14 +14,14 @@ export const useCarList = () => {
       type: "LIST_CARS",
       cars: _.sortBy(carsData.data, "brand")
     });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
       dispatch({
         type: "FILTER_CARS",
         brand: value
       });
-  }, [value]);
+  }, [value, dispatch]);
 
   return {
     cars: state.cars,

@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
-import { useCarDetail } from "../hooks/useCarDetail";
-import {useCarCompare} from '../hooks/useCarCompare'
+import { useCarDetail } from "../../hooks/useCarDetail";
+import {useCarCompare} from '../../hooks/useCarCompare'
 import NumberFormat from "react-number-format";
+import {DisplayHeader, LeadText} from '../styled/TextStyles'
+import { DetailImage } from '../styled/ImageStyles'
 
 export default function CarDetail({ carId }) {
   const { car, setId } = useCarDetail();
@@ -10,7 +12,7 @@ export default function CarDetail({ carId }) {
 
   useEffect(() => {
     setId(carId);
-  }, []);
+  }, [carId, setId]);
 
   console.log(car);
   const title = `${car.brand} - ${car.model}`;
@@ -20,27 +22,24 @@ export default function CarDetail({ carId }) {
         {car && (
           <Row>
             <Col sm="6">
-              <img style={{ margin: "0 auto", width: "100%" }} src={car.img} />
+              <DetailImage src={car.img} alt="car" />
             </Col>
             <Col>
-              <h1
-                className="display-4"
-                style={{ color: "rgba(255,255,255,.5)" }}
-              >
+              <DisplayHeader>
                 {title}
-              </h1>
+              </DisplayHeader>
               <p className="blockquote-footer">{car.year}</p>
-              <p className="lead" style={{ color: "rgba(255,255,255,.5)" }}>
+              <LeadText>
                 <NumberFormat
                   value={car.price}
                   displayType={"text"}
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-              </p>
-              <p className="lead" style={{ color: "rgba(255,255,255,.5)" }}>
+              </LeadText>
+              <LeadText>
                 {car.description}
-              </p>
+              </LeadText>
               <Button color="secondary" onClick={() => handleCompare(car)}>
                 Compare
               </Button>

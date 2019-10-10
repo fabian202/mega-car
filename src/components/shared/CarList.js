@@ -1,22 +1,12 @@
 import React from "react";
 import CarItem from "./CarItem";
 import { Container, Row, Col } from "reactstrap";
-import { useCarList } from "../hooks/useCarList";
-// import {useCarContext} from '../hooks/useCarContext'
-import {useCarCompare} from '../hooks/useCarCompare'
+import { useCarList } from "../../hooks/useCarList";
+import {useCarCompare} from '../../hooks/useCarCompare'
 
 export default function CarList() {
   const { cars } = useCarList();
-  // const { dispatch } = useCarContext();
   const { handleCompare } = useCarCompare()
-
-  // const handleCompare = (car) => {
-  //   console.log('compare', car)
-  //   dispatch({
-  //     type: 'COMPARE_CAR',
-  //     car
-  //   })
-  // }
 
   return (
     <React.Fragment>

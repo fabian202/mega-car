@@ -12,6 +12,27 @@ const filteredCars = (brand, state) => {
   };
 };
 
+const addCompare = (car, state) => {
+  if(!state.compare.filter(item => item.id === car.id).length && state.compare.length < 3) {
+    return {
+      ...state,
+      compare: [...state.compare, car]
+    }
+  }
+  return {
+    ...state
+  }
+}
+
+const removeCompare = (id, state) => {
+  const compare = state.compare.filter(item => item.id !== parseInt(id))
+
+  return {
+    ...state,
+    compare
+  }
+}
+
 export const carReducer = (state, action) => {
   switch (action.type) {
     case "LIST_CARS":
@@ -25,13 +46,12 @@ export const carReducer = (state, action) => {
       console.log(action, state);
       return {
         ...state,
-        car: state.rawCars.find(item => item.id == action.id)
+        car: state.rawCars.find(item => item.id === parseInt(action.id))
       };
     case "COMPARE_CAR" :
-      return {
-        ...state,
-        compare: [...state.compare, action.car]
-      }
+      return addCompare(action.car, state)
+    case "COMPARE_REMOVE" :
+      return removeCompare(action.id, state)
 
     default:
       break;

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Card,
   CardImg,
   CardBody,
   CardTitle,
@@ -8,29 +7,10 @@ import {
   Button,
   CardFooter
 } from "reactstrap";
-import styled, { css } from "styled-components";
 import NumberFormat from "react-number-format";
-import carDefault from "../assets/img/car.png";
+import carDefault from "../../assets/img/car.png";
 import { navigate } from "hookrouter";
-
-const cardStyle = css`
-  margin: 10px 0;
-  background-color: #333;
-  border-color: #333;
-  text-align: center;
-`;
-
-const CardStyled = ({ className, children }) => {
-  return (
-    <Card inverse className={className}>
-      {children}
-    </Card>
-  );
-};
-
-const StyledCard = styled(CardStyled)`
-  ${cardStyle}
-`;
+import StyledCard from '../styled/CardStyled'
 
 export default function CarItem({car, onCompare}) {
   const { id, brand, model, year, price, img } = car;
