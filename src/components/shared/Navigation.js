@@ -10,7 +10,7 @@ export default function Navigation({ showText }) {
   const { handleChange, compare } = useCarList();
 
   return (
-    <Navbar color="dark" dark expand="md">
+    <Navbar color="dark" dark expand="md" fixed>
       <StyledBrand href="/">MegaCar</StyledBrand>
       <Nav className="ml-auto" navbar>
         {showText && (
