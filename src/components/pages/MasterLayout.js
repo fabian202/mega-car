@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   background-color: #3f3f46;
 `;
 
+const Content = styled.div`
+  margin-top: 60px
+`;
+
 const GlobalStyle = createGlobalStyle`
 body {
   background-color: #3F3F46;
@@ -18,7 +22,9 @@ export default function MasterLayout(props) {
     <Wrapper>
       <GlobalStyle />
       <Navigation showText={props.showText}></Navigation>
-      <Component {...props} />
+      <Content>
+        <Component {...props} />
+      </Content>
     </Wrapper>
   );
 }
